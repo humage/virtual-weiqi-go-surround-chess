@@ -1,0 +1,35 @@
+body {
+	background: #888 url(../image/chinese-ink-painting.jpg) no-repeat center center;
+	background-size: 100% 100%;
+}
+#boardOpacity {
+	padding: 0.5em;
+	margin: 0.2em 1em;
+	text-align: center;
+	width: 8em;
+}
+#gridSize option {
+	text-align: center;
+}
+#stats p {
+	float: left;
+	margin: 0;
+/*	width: 8em;	/* contains 2 stones in 1 line */
+}
+#numBlack, #numWhite {
+	background: url(../image/stones.png) no-repeat 0 0;
+	background-size: auto 200%;
+	height: 3em;
+	width: 3em;
+	margin: 0.1em 0.5em;
+	line-height: 3em;
+	display: block;	
+	float: left;
+	text-align: center;
+	font-weight: bold;
+	color: #FFF;
+}
+#numWhite {
+	background-position: 0 100%;
+	color: #000;
+}

@@ -1,0 +1,420 @@
+html, body {
+	margin: 0;
+	padding: 0;
+	background: #FFF;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;	
+}
+#gameCanvas {
+	position: relative;	/* z-index > video background */
+	display: block;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+	overflow: hidden;
+	image-rendering: optimizeSpeed;
+	-ms-interpolation-mode: nearest-neighbor;
+	-webkit-optimize-contrast;
+	width: 100%;
+	height: 100%;
+}
+:webkit-full-screen {
+	width: 100%;
+	height: 100%;
+}
+img {
+	border: none;
+}
+a {
+	text-decoration: none;
+}
+.buyBtn {
+	margin: 2em;
+	padding: 0;
+	text-align: center;
+}
+.buyBtn a {
+	display: block;
+	background: #080;
+	color: #FFF;
+	padding: 0.5em 1em;
+	margin: auto;
+	max-width: 30em;	
+}
+.buyBtn a:hover {
+	color: #000;
+	background: #0F0;
+}
+.topRightBar {
+	float: right;
+}
+.topRightBar a {
+	float: left;
+	margin: 3px;
+	font-weight: bold;
+	color: #000;
+	background: #CCC;
+	border: 1px solid;
+	width: 1em;
+	height: 1em;
+	text-align: center;
+	line-height: 1em;	
+}
+.topRightBar a:hover {
+	background: #FFF;
+}
+.topRightBar .closeBtn {
+	border-color: #F88 #800 #800 #F88;
+	background: #FEE;	
+}
+.topRightBar .closeBtn:hover {
+	color: #F00;
+	background: #FCC;
+	border-color: #F00 #A00 #A00 #F00;
+}
+.maxBtn {
+	display: none;
+}
+.shareThisBtns {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+}
+#leftPanel {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	background: #FFF;
+	width: 30%;
+	min-width: 300px;
+	max-width: 800px;
+	overflow: auto;
+	box-shadow: 0 0 20px #000;
+	border-right: 5px ridge #AAA;
+}
+#leftPanel .menuBar {
+	margin: 0;
+	padding: 10px;
+}
+#leftPanel .menuBar a {
+	border: 1px solid;
+	border-color: #CCC #555 #555 #CCC;
+	padding: 0.2em 0.5em;
+	white-space: nowrap;
+	line-height: 1.8em;
+	color: #000;
+	background: #CCC;
+	background: -moz-linear-gradient(top, rgba(245,246,246,1) 0%, rgba(173,173,173,1) 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(245,246,246,1)), color-stop(100%, rgba(173,173,173,1)));
+	background: -webkit-linear-gradient(top, rgba(245,246,246,1) 0%, rgba(173,173,173,1) 100%);
+	background: -o-linear-gradient(top, rgba(245,246,246,1) 0%, rgba(173,173,173,1) 100%);
+	background: -ms-linear-gradient(top, rgba(245,246,246,1) 0%, rgba(173,173,173,1) 100%);
+	background: linear-gradient(to bottom, rgba(245,246,246,1) 0%, rgba(173,173,173,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f5f6f6', endColorstr='#adadad', GradientType=0 );
+}
+#leftPanel .menuBar a:hover {
+	color: #080;
+}
+#leftPanel .group {
+	margin: 5px;
+	padding: 10px;
+	border: 1px solid #CCC;
+}
+#leftPanel .group div {
+	clear: both;
+	margin: 0.1em;
+}
+#leftPanel .group .sameLine {
+	float: left;
+	margin: 2px 1em;
+	white-space: nowrap;	
+}
+#leftPanel button {
+	padding: 0.8em;
+	margin: 0 auto 10px;
+	width: 100%;
+	font-weight: bold;
+	display: block;
+	cursor: pointer;
+	font-variant: small-caps;
+	border: 1px solid;
+	border-color: #ACA #050 #050 #ACA;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+	background: #CFC;
+	background: -moz-linear-gradient(top, rgba(242,248,245,1) 0%, rgba(217,231,225,1) 50%, rgba(182,208,196,1) 51%, rgba(225,249,239,1) 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(242,248,245,1)), color-stop(50%, rgba(217,231,225,1)), color-stop(51%, rgba(182,208,196,1)), color-stop(100%, rgba(225,249,239,1)));
+	background: -webkit-linear-gradient(top, rgba(242,248,245,1) 0%, rgba(217,231,225,1) 50%, rgba(182,208,196,1) 51%, rgba(225,249,239,1) 100%);
+	background: -o-linear-gradient(top, rgba(242,248,245,1) 0%, rgba(217,231,225,1) 50%, rgba(182,208,196,1) 51%, rgba(225,249,239,1) 100%);
+	background: -ms-linear-gradient(top, rgba(242,248,245,1) 0%, rgba(217,231,225,1) 50%, rgba(182,208,196,1) 51%, rgba(225,249,239,1) 100%);
+	background: linear-gradient(to bottom, rgba(242,248,245,1) 0%, rgba(217,231,225,1) 50%, rgba(182,208,196,1) 51%, rgba(225,249,239,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2f8f5', endColorstr='#e1f9ef', GradientType=0 );
+}
+#leftPanel button:hover {
+	color: #080;
+}
+#leftPanel input {
+	padding: 0.1em 0.5em;
+}
+#leftPanel input[type=url] {
+	width: 96%;
+	padding: 0.1em 2%;
+	margin: 0;
+}
+#helpWin {
+	position: absolute;
+	z-index: 9;
+	top: 5%;
+	left: 0;
+	overflow: auto;
+	border: 5px ridge #888;
+	margin: 0 5%;
+	padding: 0;
+	box-shadow: 5px 5px 30px #000;
+	min-width: 300px;
+	max-height: 90%;
+	font-size: 1.2em;
+	background: #FFF;
+	background: -moz-linear-gradient(top,  rgba(136,150,136,1) 0%, rgba(255,255,255,1) 10%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(136,150,136,1)), color-stop(10%,rgba(255,255,255,1)));
+	background: -webkit-linear-gradient(top,  rgba(136,150,136,1) 0%,rgba(255,255,255,1) 10%);
+	background: -o-linear-gradient(top,  rgba(136,150,136,1) 0%,rgba(255,255,255,1) 10%);
+	background: -ms-linear-gradient(top,  rgba(136,150,136,1) 0%,rgba(255,255,255,1) 10%);
+	background: linear-gradient(to bottom,  rgba(136,150,136,1) 0%,rgba(255,255,255,1) 10%);
+	-webkit-border-radius: 10px;   
+    border-radius: 10px;
+}
+#helpWin h1, #helpWin h2 {
+	padding: 0;
+	margin: 0.5em;
+}
+#helpWin .deviceInfo {
+	font-style: italic;
+	font-size: 0.8em;
+	margin: 1em 2em;
+}
+#helpWin p {
+	margin: 0.2em 1em;
+}
+#helpWin ul {
+	margin: 1em;
+	list-style: square;
+}
+#helpWin li {
+	padding: 0;
+	margin: 0.5em;
+}
+#helpWin .closeBtnDiv {
+	clear: both;
+	margin: 0;
+	padding: 1em;
+	background: #AAA;
+	border-top: 1px solid #555;
+	text-align: center;
+}
+#helpWin .closeBtnDiv a {
+	margin: 0;
+	padding: 0.5em 5em;
+	border: 1px solid;
+	border-color: #AAA #555 #555 #AAA;
+	-webkit-border-radius: 10px;   
+    border-radius: 10px;
+	background: #CCC;
+	background: -moz-linear-gradient(top, rgba(226,226,226,1) 0%, rgba(219,219,219,1) 50%, rgba(209,209,209,1) 51%, rgba(254,254,254,1) 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(226,226,226,1)), color-stop(50%, rgba(219,219,219,1)), color-stop(51%, rgba(209,209,209,1)), color-stop(100%, rgba(254,254,254,1)));
+	background: -webkit-linear-gradient(top, rgba(226,226,226,1) 0%, rgba(219,219,219,1) 50%, rgba(209,209,209,1) 51%, rgba(254,254,254,1) 100%);
+	background: -o-linear-gradient(top, rgba(226,226,226,1) 0%, rgba(219,219,219,1) 50%, rgba(209,209,209,1) 51%, rgba(254,254,254,1) 100%);
+	background: -ms-linear-gradient(top, rgba(226,226,226,1) 0%, rgba(219,219,219,1) 50%, rgba(209,209,209,1) 51%, rgba(254,254,254,1) 100%);
+	background: linear-gradient(to bottom, rgba(226,226,226,1) 0%, rgba(219,219,219,1) 50%, rgba(209,209,209,1) 51%, rgba(254,254,254,1) 100%);
+ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e2e2e2', endColorstr='#fefefe', GradientType=0 );
+}
+
+#helpWin .books li {
+	list-style: none;
+	float: left;
+	text-align: center;
+	margin: 1em;
+	padding: 0;
+	position: relative;
+}
+#helpWin .books li p {
+	font-weight: bold;
+	position: absolute;
+	bottom: 95%;
+	left: -1em;
+	margin: 0 -2px;
+	width: 100%;
+	padding: 0.2em 1em;
+	background: #FFF;
+	border: 1px solid #888;
+	display: none;
+	z-index: 9;
+}
+#helpWin .books li:hover p {
+	display: block;
+}
+#helpWin .books img {
+	height: 150px;
+	border: 2px solid #888;
+}
+#helpWin .books img:hover {
+	border-color: #080;
+}
+
+#intraLink, #affiliate, #donation {
+	margin: 1em auto;
+	text-align: center;
+	overflow: hidden;
+}
+#intraLink a {
+	font-style: italics;
+}
+#helpWin #followSocial {
+	margin: 0;
+	padding: 0.1em 1em;
+	background: #CCC;
+	border-bottom: 1px solid #888;
+}
+#followSocial img {
+	opacity: 0.5;
+	height: 25px;
+}
+#followSocial img:hover {
+	opacity: 1;
+}
+.browserMsg {
+	text-align: center;
+	color: #F00;
+	background: #FEE;
+	border: 1px solid #F00;
+	padding: 0.5em;
+	margin: 1em;
+}
+#stats {
+	position: absolute;
+	top: 0;
+	right: 0;
+	background: #888;
+	padding: 3px;
+	margin: 0;
+	border: 1px solid #000;
+}
+#stats table {
+	clear: both;
+	text-align: left;
+}
+#stats tr {
+	background: #FFF;
+}
+#stats tr:hover {
+	background: #FE0;
+}
+#stats th, #stats td {
+	border: 1px solid #888;
+	padding: 0.1em 0.5em;
+	white-space: nowrap;
+}
+#fullScreen {
+	position: absolute;
+	top: 1%;
+	left: 50%;
+	margin-left: -10em;
+	text-align: center;
+	display: none;
+}
+#fullScreen button {
+	width: 20em;
+	padding: 0.5em 1em;
+}
+.clrflt {
+	clear: both;
+}
+#videoBackground {
+	position: absolute;
+	background: #000;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+/* autocomplete */
+.dropDownDiv {
+	position: relative;
+	padding: 0;
+	margin: 0;
+}
+.dropDownArrow {
+	position: absolute;
+	right: 0;
+	top: 0;
+	cursor: pointer;
+	color: #555;
+}
+.dropDownList {
+	display: none;
+	position: absolute;
+	top: 100%;
+	left: 0;
+	z-index: 99;
+	width: 100%;
+	margin: 0;
+	padding: 0 0 10px;
+	list-style: none;
+	background: #FFF;
+	border: 1px solid;
+	border-color: #AAA #555 #555 #AAA;
+	-webkit-border-radius: 0 0 10px 10px;
+	border-radius: 0 0 10px 10px;
+}
+.dropDownList li a {
+	clear: both;
+	padding: 0.2em 1em;
+	display: block;
+	border-top: 1px solid #EEE;
+}
+.dropDownList li a code {
+	float: right;
+}
+.dropDownList li a.highlighted {
+	text-decoration: none;
+	color: #000;
+	background: #0F0;
+}
+
+/* ipad deals */
+.ipadDeal {
+	position: relative;
+	margin: 5px;
+	border: 1px solid #800;
+	text-align: center;
+}
+#helpWin .ipadDeal {
+	float: right;
+	margin: 1em;
+}
+.ipadDeal img {
+	max-width: 300px;
+	border: none;
+	opacity: 0.7;
+	width: 100%;
+}
+.ipadDeal:hover img {
+	opacity: 1;
+}
+.ipadDeal h3 {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	text-align: center;
+	margin: 0;
+	padding: 0;
+	text-decoration: none;
+	color: #FFF;
+	background: #F00;
+}
+.ipadDeal:hover h3 {
+	opacity: 0.3
+}

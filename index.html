@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<title>Play WeiQi Chinese Chess online</title>
+<link href="css/panelControls.css?0" rel="stylesheet">
+<link href="css/weiqi.css?0" rel="stylesheet">
+<script src="js/jquery-1.7.1.min.js"></script>
+<script src="js/jquery.mobile.js?0"></script>
+<script src="js/panelControls.js?0"></script>
+<script src="js/requestNextAnimationFrame.js?0"></script>
+<script src="js/sprites.js?0"></script>
+<script src="js/gameEngine.js?0"></script>
+<script src="js/weiqi.js?0"></script>
+</head>
+<body id="body-weiqi-chinese-chess">
+<canvas id="gameCanvas">
+  <h3 class="browserMsg"> Your browser does not support HTML5 Canvas. Please use IE9 or above, Firefox, Chrome, Safari, or Opera. </h3>
+  <img src="games/chess/image/virtual-weiqi-screenshot.jpg" alt="WeiQi Chinese Chess screenshot"> </canvas>
+<div id="leftPanel" style="display:none">
+  <button id="newBtn">Reset</button>
+  <label>Size of Chess Game:
+    <select id="gridSize">
+      <option value="17" selected>17</option>
+    </select>
+  </label>
+  <div> </div>
+</div>
+</div>
+</body>
+</html>
